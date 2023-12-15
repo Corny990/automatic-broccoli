@@ -21,7 +21,9 @@
             border-bottom: 1px solid #000000;
             margin-top: 30px;}
         p{text-align: center;}
+        
         </style>
+
     <body>
         <h1>Book Covers</h1>
         <p><img src="Book 1.jpeg" alt="Book 1" class="center" width="50%" height="50%"></p>
@@ -29,5 +31,21 @@
         <p><img src="Book 3.jpeg" alt="Book 3" class="center" width="50%" height="50%"></p>
         <p><img src="Book 4.jpeg" alt="Book 4" class="center" width="50%" height="50%"></p>
     </body> 
+   <p><button onclick="return myFunction()">Canvas</button></p>
+<p><canvas id="myCanvas" width="100%" height="100%"></canvas></p>
+<script>
+    function myFunction() {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        // Create gradient
+        var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "white");
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(20, 20, 300, 160);
+    }
+</script>
+
            
 </html> 
