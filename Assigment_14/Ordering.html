@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<Style>
+body{
+ background-color:rgb(210, 180, 140);
+ margin: 0 10%;
+
+}
+h1{
+ text-align: center;
+ font-family: Arial;
+ font-weight: normal;
+ font-size: 50px;
+ text-transform: uppercase;
+ border-bottom: 1px solid #000000;
+ margin-top: 30px;
+}
+</Style>
+<nav class="topnav">
+    <a href="Home.html">Home</a> 
+    <a href="Book Covers.html">Book 
+        Covers 
+    </a> 
+    <a href="Ordering.html">Ordering</a>
+    <a href="Contact.html">Contact</a>
+<body>
+
+<form>
+<h1>Order Books</h1>
+<p><label>Name of receiver: <input type="text" id="name1" name="Name" ></label></p>
+<p><label>Address: <br><textarea name="comment" rows="4" cols="45" placeholder="3300 South Higgins Ave, 59801"></textarea></label></p>
+<p><label>Phone number: <input type="tel"id="size" name="Contact info"></label></p>
+
+
+ <p><Label>Book: </Label>
+<select id="Book">
+    <option value="The_Hunger_Games">The Hunger Games</option>
+    <option value="Catching_Fire">Catching Fire</option>
+    <option value="Mocking_Jay">Mocking Jay</option>
+    <option value="The_Ballad_of_Songbirds_and_Snakes">The Ballad of Songbirds and Snakes</option>
+</select>
+
+<button onclick="return myFunction()">Order</button>
+<button onclick="return backout()">cancel</button>
+
+
+
+</form>
+<p id="message2"></p>
+<p id="message3"></p>
+
+    
+
+<script>
+        
+    function myFunction(){
+        var name = document.getElementById("name1").value;
+        var age = document.getElementById("Book").value;
+        if(age == "The_Hunger_Games"){
+            var group = "The Hunger Games";
+        }
+        else if (age == "Catching_Fire"){
+            var group = "Catching Fire";
+        }
+        else if (age == "Mocking_Jay"){
+            var group = "Mocking Jay";
+        }
+        else{
+            var group = "The_Ballad_of_Songbirds_and_Snakes";
+        }
+         
+        document.getElementById("message2").innerHTML = "Thank you for placing an order, " + name +"!";
+        document.getElementById("message3").innerHTML = "Thank you for placing an order on: " + group;
+       
+        
+        return false;
+    }
+    function backout(){
+            
+        document.getElementById("message2").innerHTML = "Sorry to see you go";
+        return false;
+    }
+
+</script>
+</body>
+</html>
